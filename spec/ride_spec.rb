@@ -26,8 +26,8 @@ RSpec.describe Ride do
        ride1.board_rider(visitor1)
        ride1.board_rider(visitor2)
        ride1.board_rider(visitor1)
-
-       expect(ride1.rider_log).to eq({:visitor1 => 2, :visitor2 => 1})
+      # require 'pry';binding.pry
+       expect(ride1.rider_log).to eq({visitor1 => 2, visitor2 => 1})
     end
   end
 end
