@@ -24,4 +24,13 @@ RSpec.describe Visitor do
       expect(visitor1.preferences).to eq([:gentle, :thrilling])
     end
   end
+
+  describe "#tall_enough?" do 
+    it "returns a boolean given an argument of a height requirement" do 
+      expect(visitor1.tall_enough?(54)).to eq(true)
+      expect(visitor2.tall_enough?(54)).to eq(false)
+      expect(visitor3.tall_enough?(54)).to eq(true)
+      expect(visitor1.tall_enough?(64)).to eq(false)
+    end
+  end
 end
