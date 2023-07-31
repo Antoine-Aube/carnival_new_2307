@@ -21,7 +21,7 @@ RSpec.describe Visitor do
       visitor1.add_preference(:gentle)
       visitor1.add_preference(:thrilling)
 
-      expect(visitor1.preferences).top eq([:gentle, :thrilling])
+      expect(visitor1.preferences).to eq([:gentle, :thrilling])
     end
   end
 end
