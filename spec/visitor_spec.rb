@@ -12,7 +12,7 @@ RSpec.describe Visitor do
 
     it { expect(visitor1.name).to eq("Bruce") }
     it { expect(visitor1.height).to eq(54) }
-    it { expect(visitor1.spending_money).to eq('$10') }
+    it { expect(visitor1.spending_money).to eq(10) }
     it { expect(visitor1.preferences).to eq([]) }
   end
 
