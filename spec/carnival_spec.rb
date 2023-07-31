@@ -14,5 +14,6 @@ RSpec.describe Carnival do
   describe "it exists and has attributes" do 
     it{ expect(carnival).to be_a Carnival }
     it{ expect(carnival.duration).to eq(14) }
+    it{ expect(carnival.rides).to eq([]) }
   end
 end
