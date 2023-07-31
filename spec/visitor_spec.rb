@@ -1,5 +1,6 @@
 require './lib/visitor'
 
+
 RSpec.describe Visitor do 
   let(:visitor1) { Visitor.new('Bruce', 54, '$10') }
   let(:visitor2) { Visitor.new('Tucker', 36, '$5') }

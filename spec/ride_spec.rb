@@ -29,5 +29,20 @@ RSpec.describe Ride do
       # require 'pry';binding.pry
        expect(ride1.rider_log).to eq({visitor1 => 2, visitor2 => 1})
     end
+
+    it "deducts admission fee from visitor spending money each time a visitor rides" do 
+       visitor1.add_preference(:gentle)
+       visitor2.add_preference(:gentle)
+        # require 'pry';binding.pry
+       expect(visitor1.spending_money).to eq(10)
+       expect(visitor2.spending_money).to eq(5)
+       
+       ride1.board_rider(visitor1)
+       ride1.board_rider(visitor2)
+       ride1.board_rider(visitor1)
+      # require 'pry';binding.pry
+       expect(visitor1.spending_money).to eq(8)
+       expect(visitor2.spending_money).to eq(4)
+    end
   end
 end
