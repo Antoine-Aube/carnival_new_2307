@@ -48,14 +48,37 @@ RSpec.describe Ride do
     it "adds admission fee for the ride to total revenue each time the ride is riden" do 
       visitor1.add_preference(:gentle)
       visitor2.add_preference(:gentle)
-    
+      
       expect(ride1.total_revenue).to eq(0)   
       
       ride1.board_rider(visitor1)
       ride1.board_rider(visitor2)
       ride1.board_rider(visitor1)
-      require 'pry';binding.pry
+      # require 'pry';binding.pry
       expect(ride1.total_revenue).to eq(3)   
+    end
+    
+    it "boards riders based on rider prefenrence and height_restriction" do 
+      visitor1.add_preference(:gentle)
+      visitor2.add_preference(:gentle)
+
+      ride1.board_rider(visitor1)
+      ride1.board_rider(visitor2)
+      ride1.board_rider(visitor1)
+
+      visitor2.add_preference(:thrilling)
+      visitor3.add_preference(:thrilling)
+
+      ride3.board_rider(visitor1)
+      ride3.board_rider(visitor2)
+      ride3.board_rider(visitor3)
+
+      expect(visitor1.spending_money).to eq(8)
+      expect(visitor2.spending_money).to eq(4)
+      expect(visitor3.spending_money).to eq(13)
+      
+      expect(ride3.rider_log).to eq([visitor3 => 1])
+      expect(ride2.total_revenue).to eq(2)
     end
   end
 end
