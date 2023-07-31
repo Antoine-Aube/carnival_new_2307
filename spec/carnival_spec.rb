@@ -16,4 +16,14 @@ RSpec.describe Carnival do
     it{ expect(carnival.duration).to eq(14) }
     it{ expect(carnival.rides).to eq([]) }
   end
+
+  describe "#add_ride" do 
+    it "can add ride objects to it's ride attribute" do
+      carnival.add_ride(ride1)
+      carnival.add_ride(ride2)
+      carnival.add_ride(ride3)
+
+      expect(carnival.rides).to eq([ride1, ride2, ride3])
+    end
+  end
 end
