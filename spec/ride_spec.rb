@@ -15,6 +15,6 @@ RSpec.describe Ride do
     it{expect(ride1.min_height).to eq(24)}
     it{expect(ride1.admission_fee).to eq(1)}
     it{expect(ride1.excitement).to eq(:gentle)}
-    it{expect(ride1.total_reveny).to eq(0)}
+    it{expect(ride1.total_revenue).to eq(0)}
   end
 end
