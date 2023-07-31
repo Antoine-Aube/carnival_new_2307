@@ -15,4 +15,13 @@ RSpec.describe Visitor do
     it { expect(visitor1.spending_money).to eq('$10') }
     it { expect(visitor1.preferences).to eq([]) }
   end
+
+  describe "#add preference" do 
+    it "can add preferences" do
+      visitor1.add_preference(:gentle)
+      visitor1.add_preference(:thrilling)
+
+      expect(visitor1.preferences).top eq([:gentle, :thrilling])
+    end
+  end
 end
