@@ -17,4 +17,17 @@ RSpec.describe Ride do
     it{expect(ride1.excitement).to eq(:gentle)}
     it{expect(ride1.total_revenue).to eq(0)}
   end
+
+  describe "board_rider and #ride_log" do 
+    it "can board riders and add them to rider log as keys with number of times riden as values" do 
+       visitor1.add_preference(:gentle)
+       visitor2.add_preference(:gentle)
+
+       ride1.board_rider(visitor1)
+       ride1.board_rider(visitor2)
+       ride1.board_rider(visitor1)
+
+       expect(ride1.rider_log).to eq({:visitor1 => 2, :visitor2 => 1})
+    end
+  end
 end
