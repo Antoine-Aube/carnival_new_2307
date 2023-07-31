@@ -47,19 +47,23 @@ RSpec.describe Carnival do
       ride1.board_rider(visitor3)
       ride1.board_rider(visitor3)
       ride1.board_rider(visitor4)
-      ride1.board_rider(visitor4)
-      ride1.board_rider(visitor4)
-      ride1.board_rider(visitor4)
-      ride1.board_rider(visitor4)
+      
       
       ride2.board_rider(visitor1)
       ride2.board_rider(visitor2)
       ride2.board_rider(visitor4)
-
+      ride2.board_rider(visitor4)
+      ride2.board_rider(visitor4)
+      ride2.board_rider(visitor4)
+      ride2.board_rider(visitor4)
+      ride2.board_rider(visitor4)
+      ride2.board_rider(visitor4)
+      ride2.board_rider(visitor4)
+      
       ride3.board_rider(visitor3)
       ride3.board_rider(visitor4)
-
-      expect(carnival.most_popular_ride).to eq(ride1)
+      # require 'pry';binding.pry
+      expect(carnival.most_popular_ride).to eq(ride2)
     end
   end
 end
